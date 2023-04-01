@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) <!-- (insert zenodo doi) -->
 
-[Joshua Dimasaka](https://www.joshuadimasaka.com/)¹*, [Andrea Marinoni](https://www.andreamarinoni.com/)², [Sakthy Selvakumaran](http://www.eng.cam.ac.uk/profiles/ss683)²
+[Joshua Dimasaka](https://www.joshuadimasaka.com/)¹*,[Sakthy Selvakumaran](http://www.eng.cam.ac.uk/profiles/ss683)², [Andrea Marinoni](https://www.andreamarinoni.com/)²
 
 ¹UKRI-CDT AI for the study of Environmental Risks, Department of Earth Sciences, University of Cambridge\
 ²Department of Engineering, University of Cambridge\
