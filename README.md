@@ -28,4 +28,4 @@ This code depends on
 ## **6. Repository Structure**
 
 ## **7. Acknowledgements**
-This work was supported by the UKRI Centre for Doctoral Training in "Application of Artificial Intelligence to the study of Environmental Risks" in the Department of Earth Sciences at the University of Cambridge.
+This work is supported by the UKRI Centre for Doctoral Training in "Application of Artificial Intelligence to the study of Environmental Risks" in the Department of Earth Sciences at the University of Cambridge.
