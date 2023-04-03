@@ -8,9 +8,9 @@
 ²Department of Engineering, University of Cambridge\
 *[jtd33@cam.ac.uk](mailto:jtd33@cam.ac.uk)
 
-Short abstract lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam efficitur, neque sit amet venenatis tempor, nibh arcu tincidunt risus, nec ultrices lectus elit et orci. Curabitur malesuada ligula molestie arcu semper tempus. Vivamus vel gravida lectus, id mattis sapien. Nunc hendrerit molestie libero sed laoreet. Cras ullamcorper mattis vehicula. Sed velit nisl, euismod quis malesuada vel, convallis sit amet tellus. Phasellus et elementum enim, eget accumsan neque. Suspendisse ut erat ultricies, dignissim ex hendrerit, eleifend metus. Proin ut sem bibendum, dapibus dolor ac, tincidunt risus. Etiam nisi metus, dignissim quis dapibus congue, porta in lectus. Nulla sagittis, urna vel pellentesque maximus, risus nisi dictum ipsum, vitae semper sem magna a dui.
+Abstract: 
 
-Keywords: 
+Keywords: *climate change adaptation and mitigation, causal inference, Arctic*
 
 ---
 
