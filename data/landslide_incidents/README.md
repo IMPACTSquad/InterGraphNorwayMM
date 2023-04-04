@@ -2,7 +2,7 @@
 
 ## **Preview**
 <p align="center">
-    <img src="data/landslide_incidents/assets/map_preview_landslide_incidents.png" width="100%"\>
+    <img src="assets/map_preview_landslide_incidents.png" width="100%"\>
 </p>
 
 ## **Metadata**
