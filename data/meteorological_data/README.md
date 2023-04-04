@@ -12,7 +12,7 @@
 - Source: [https://nedlasting.nve.no/gis/](https://nedlasting.nve.no/gis/)
 - License: [Norwegian Licence for Open Government Data (NLOD) 1.0](https://data.norge.no/nlod/en/1.0)  and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - Coordinate Reference System: EPSG:8687 - Slovenia 1996 / UTM zone 33N
-
+- Spatial Resolution: 1 kilometer (~0.621 mile)
 
 ## **File Description**
 - filename1 (brief description)
@@ -30,3 +30,4 @@
 ## **Technical References**
 - [Lussana, C., Tveito, O. E., Dobler, A., and Tunheim, K.: seNorge_2018, daily precipitation, and temperature datasets over Norway, Earth Syst. Sci. Data, 11, 1531–1551, https://doi.org/10.5194/essd-11-1531-2019, 2019.](https://essd.copernicus.org/articles/11/1531/2019/)
 - [Lussana C. seNorge observational gridded datasets. seNorge_2018, version 20.05. arXiv preprint arXiv:2008.02021. 2020 Aug 5.](https://arxiv.org/abs/2008.02021)
+- [seNorge_2018 GitHub Page](https://github.com/metno/seNorge_docs/wiki/seNorge_2018)
