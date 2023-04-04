@@ -9,9 +9,12 @@
 - Author: Norwegian Water and Energy Directorate
 - Date: February 2015
 - Descripton: Point indication for an area where a landslide has occurred and key information about the landslide
-- Format: GIS vector shapefile (exported as csv file)
-- Count: 886
 - Source: [https://nedlasting.nve.no/gis/](https://nedlasting.nve.no/gis/)
+- Count: 886
+
+## **File Description**
+- landslide_incidents.xlsx (a spreadsheet file)
+- landslide_incidents.gpkg (a GIS vector point file)
 
 ## **Field Names**
 - `fid`: identification
