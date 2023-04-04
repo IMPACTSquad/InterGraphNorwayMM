@@ -1,0 +1,1 @@
+# rainfall and average temperature: https://thredds.met.no/thredds/catalog/senorge/seNorge_2018/aggregated_products
