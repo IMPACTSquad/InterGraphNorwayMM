@@ -10,6 +10,7 @@
 - Date: February 2015
 - Descripton: Point indication for an area where a landslide has occurred and key information about the landslide
 - Source: [https://nedlasting.nve.no/gis/](https://nedlasting.nve.no/gis/)
+- License: [Norwegian Licence for Open Government Data (NLOD) 1.0](https://data.norge.no/nlod/en/1.0)
 - Count: 886
 
 ## **File Description**
