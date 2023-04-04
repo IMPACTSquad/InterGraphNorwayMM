@@ -10,7 +10,9 @@
 - Date: Various
 - Descripton: seNorge_2018 is an observational gridded dataset. The data sources are: the Norwegian Meteorological Institute Climate Database, the Swedish Meteorological and Hydrological Institute Open Data API, the Finnish Meteorological Institute open data API and the European Climate Assessment & Dataset.
 - Source: [https://nedlasting.nve.no/gis/](https://nedlasting.nve.no/gis/)
-- License: [Norwegian Licence for Open Government Data (NLOD) 1.0](https://data.norge.no/nlod/en/1.0)  and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- License:
+    - [Norwegian Licence for Open Government Data (NLOD) 1.0](https://data.norge.no/nlod/en/1.0)
+    - [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 - Coordinate Reference System: EPSG:8687 - Slovenia 1996 / UTM zone 33N
 - Spatial Resolution: 1 kilometer (~0.621 mile)
 
