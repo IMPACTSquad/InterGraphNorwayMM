@@ -24,6 +24,7 @@ feature.x = landslide_incidents.x;
 feature.y = landslide_incidents.y;
 
 %% meteorological_data
+% This takes 17 minutes.
 % Daily precipitation and temperature data We have to consider the point in
 % time from the landslide incidents so that we can properly index which
 % precipitation and temperature data we should be using. 
@@ -46,8 +47,6 @@ dayCount = daysdif( datetime(landslide_incidents.YYYY,1,1),...
                              landslide_incidents.MM,...
                              landslide_incidents.DD));
 uniq_years = unique(landslide_incidents.YYYY);
-w = 1;
-tic
 for i = 1:numel(uniq_years)
     
     % load nc file
@@ -127,10 +126,6 @@ for i = 1:numel(uniq_years)
                             reshape(ncread(filepath, "tx", ...
                             [row(j) col(j) dayCount(idx_yyyy(j))-(n_past-1)], [1 1 n_past]), ...
                             [numel(idx_yyyy(j)),n_past]);
-        end
-        disp(w)
-        toc
-        w = w + 1;
     end
     
 end
