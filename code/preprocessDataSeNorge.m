@@ -129,3 +129,15 @@ for i = 1:numel(uniq_years)
     end
     
 end
+
+
+
+
+%%
+seNorgeOpenDAP_file_path = "https://thredds.met.no/thredds/dodsC/senorge/";
+
+
+dem_path = "geoinfo/seNorge2018_dem_UTM33.nc";
+laf_path = "geoinfo/seNorge2018_max_laf_UTM33.nc";
+snow_swepr = "seNorge_snow/swepr/swepr_2023.nc";
+snow_swe = "seNorge_snow/swe/swe_2023.nc";

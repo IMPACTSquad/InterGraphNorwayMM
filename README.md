@@ -16,7 +16,7 @@ Keywords: *climate change adaptation and mitigation, causal inference, Arctic*
 
 ## **1. Installation**
 This code depends on
-- MATLAB [Financial Toolbox™](https://uk.mathworks.com/products/finance.html); 
+<!-- - MATLAB [Financial Toolbox™](https://uk.mathworks.com/products/finance.html);  -->
 
 ## **2. Data**
 
