@@ -6,6 +6,13 @@ outputpath = "C:\Desktop\AI4ER\03 - MRes\Easter 2023\MRes Project\ArcticCCAM\dat
 contents = struct2table(dir(inputpath));
 filename = string(contents.name(find(contents.isdir==0)));
 
+numNODES = readtable("C:\Desktop\AI4ER\03 - MRes\Easter 2023\MRes Project\ArcticCCAM\data\road_network\numNODES.xlsx");
+numNODES_fid2 = zeros(numel(numNODES.filename),1);
+for i = 1:numel(numNODES.filename)
+    temp = char(numNODES.filename(i));
+    numNODES_fid2(i,1) = str2num(temp(4:end-19));
+end
+
 landslide_incidents = readtable("data\landslide_incidents\landslide_incidents_27341_since20150623_alongroad_norwayonly.xlsx");
 summaryCOORDS = [];
 centroid = [];
@@ -14,6 +21,7 @@ binarylabel = [];
 contlabel = [];
 date = [];
 lstype = [];
+nnodes = [];
 
 tic
 for i = 1:numel(filename)
@@ -48,7 +56,8 @@ for i = 1:numel(filename)
                                landslide_incidents.S(landslide_incidents.fid2==temp_fid2)];
         lstype = [             lstype; ...
                                landslide_incidents.lstype_ind(landslide_incidents.fid2==temp_fid2)];
-
+        nnodes = [             nnodes; ...
+                               numNODES.nnodes(numNODES_fid2==temp_fid2)];
     end
     disp(i/numel(filename)*100)
     toc
@@ -62,3 +71,4 @@ m.binarylabel = binarylabel;
 m.contlabel = contlabel;
 m.date = date;
 m.lstype = lstype;
+m.nnodes = nnodes;
