@@ -20,6 +20,8 @@ function [a] = getINODES(inputpath,filename)
             [~, intersection_node_indices] = extract_connectivity(parsed_osm);
             a(i,1) = numel(intersection_node_indices);
         catch
+            % some extracted osm files have o intersection nodes even
+            % though it's close to the road
             a(i,1) = 0;
         end
         toc
