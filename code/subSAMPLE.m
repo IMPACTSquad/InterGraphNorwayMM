@@ -10,7 +10,7 @@ sampleN_nfid2 = sampleN.nfid2;
 temp = [];
 
 for i = 1:numel(sampleN_nnodes)
-    idx = datasample(find(nnodes==sampleN_nnodes(i)),sampleN_nfid2(i));
+    idx = datasample(find(nnodes==sampleN_nnodes(i)),sampleN_nfid2(i),'Replace',false);
     temp = [temp; ...
         filename(idx) nnodes(idx)];
 end 
@@ -51,13 +51,13 @@ subset.YYYY = [];
 subset.MM = [];
 subset.DD = [];
 subset.H = [];
-for i = 1:size(samples,1)
-    subset.fid = [subset.fid; feature.fid(feature.fid==samples(i,1))];
-    subset.nodeidx = [subset.nodeidx; feature.nodeidx(feature.fid==samples(i,1))];
-    subset.x = [subset.x; feature.x(feature.fid==samples(i,1))];
-    subset.y = [subset.y; feature.y(feature.fid==samples(i,1))];
-    subset.YYYY = [subset.YYYY; feature.YYYY(feature.fid==samples(i,1))];
-    subset.MM = [subset.MM; feature.MM(feature.fid==samples(i,1))];
-    subset.DD = [subset.DD; feature.DD(feature.fid==samples(i,1))];
-    subset.H = [subset.H; feature.H(feature.fid==samples(i,1))];
+for j = 1:size(samples,1)
+    subset.fid = [subset.fid; feature.fid(feature.fid==samples(j,1))];
+    subset.nodeidx = [subset.nodeidx; feature.nodeidx(feature.fid==samples(j,1))];
+    subset.x = [subset.x; feature.x(feature.fid==samples(j,1))];
+    subset.y = [subset.y; feature.y(feature.fid==samples(j,1))];
+    subset.YYYY = [subset.YYYY; feature.YYYY(feature.fid==samples(j,1))];
+    subset.MM = [subset.MM; feature.MM(feature.fid==samples(j,1))];
+    subset.DD = [subset.DD; feature.DD(feature.fid==samples(j,1))];
+    subset.H = [subset.H; feature.H(feature.fid==samples(j,1))];
 end
