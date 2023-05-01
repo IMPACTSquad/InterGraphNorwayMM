@@ -1,0 +1,26 @@
+seed = 1
+setup
+        cat(2,  steepness, ...
+                seNorge_rr, seNorge_tg, ... 
+                seNorgeSnow_swepr, seNorgeSnow_swe, seNorgeSnow_ski, ...
+                seNorgeSnow_sdfsw, seNorgeSnow_sd, seNorgeSnow_qtt, ...
+                seNorgeSnow_qsw, seNorgeSnow_lwc, seNorgeSnow_fsw)];
+numHiddenFeatureMaps = 512;
+numEpochs = 10000;
+learnRate = 0.01;
+validationFrequency = 10;
+
+
+accuracy =
+
+    0.8944
+
+
+accuracy =
+
+    0.5969
+
+
+accuracy =
+
+    0.6165

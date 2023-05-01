@@ -1,7 +1,4 @@
 function ANorm = normalizeAdjacency(A)
-
-    % Add self connections to adjacency matrix.
-    A = A + speye(size(A));
     
     % Compute inverse square root of degree.
     degree = sum(A, 2);
