@@ -9,7 +9,7 @@ This GitHub repository contains the code, data, and figures for the Master of Re
 
 ## **1. Overview**
 
-Our proposed inter-graph representation learning, which consists of two main steps: (1) Supervised Ensemble Graph Neural Network for susceptibility mapping and (2) Unsupervised Spectral Graph Clustering for settlement exposure assessment. The figures below show an schematic overview of the entire workflow. Please, refer to our report [link](/report/report_mres_dimasaka.pdf) for the detailed discussion of this implementation.
+Our proposed novel inter-graph representation learning consists of two main steps: (1) Supervised Ensemble Graph Neural Network for susceptibility mapping and (2) Unsupervised Spectral Graph Clustering for settlement exposure assessment. The figures below show an schematic overview of the entire workflow. Please, refer to our report [link](/report/report_mres_dimasaka.pdf) for the detailed discussion of this implementation.
 
 <p align="center">
     <img src="figures/images/figures-009.jpg" width="100%"\>
