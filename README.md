@@ -3,19 +3,51 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7319726.svg)](https://doi.org/10.5281/zenodo.7319726) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
-This GitHub repository contains the code, data, and figures for the Master of Research report [_Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning_](https://doi.org/10.1038/s41467-022-35418-8). If you have any questions, please contact [jtd33@cam.ac.uk](mailto:jtd33@cam.ac.uk).
+This GitHub repository contains the code, data, and figures for the Master of Research report [_Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning_](/report/report_20230630.pdf). If you have any questions, please contact [jtd33@cam.ac.uk](mailto:jtd33@cam.ac.uk).
 
 ---
 
-## **1. Installation**
+## **1. Overview**
+
+Our proposed inter-graph representation learning, which consists of two main steps: (1) Supervised Ensemble Graph Neural Network for susceptibility mapping and (2) Unsupervised Spectral Graph Clustering for settlement exposure assessment. The figure below shows an schematic overview of the entire workflow.
+
+<p align="center">
+    <img src="figures/images/figures-009.jpg" width="100%"\>
+</p>
+
+<p align="center">
+    <img src="figures/images/figures-010.jpg" width="100%"\>
+</p>
+
+
+### **1.1. Supervised Ensemble Graph Neural Network**
+
+<p align="center">
+    <img src="figures/images/figures-001.jpg" width="100%"\>
+</p>
+
+### **1.2. Unsupervised Spectral Graph Clustering**
+
+<p align="center">
+    <img src="figures/images/figures-002.jpg" width="100%"\>
+</p>
+
+## **2. Installation**
 
 This code depends on [MALTAB R2023a](https://uk.mathworks.com/), [QGIS 3.22.16-Białowieża](https://www.qgis.org/en/site/forusers/download.html), or any newer versions. The MATLAB toolboxes for [Mapping](https://uk.mathworks.com/products/mapping.html), [Financial](https://uk.mathworks.com/products/finance.html), [Statistics and Machine Learning](https://uk.mathworks.com/help/stats/getting-started-12.html), and [Deep Learning](https://uk.mathworks.com/help/deeplearning/ug/deep-learning-in-matlab.html) must also be installed to enable the data import and export of GeoTIFF files (*.tif) and perform the deep learning training.
 
-## **2. Data**
+## **3. Data**
+
+<p align="center">
+    <img src="figures/images/figures-004.jpg" width="100%"\>
+</p>
+
+<p align="center">
+    <img src="figures/images/figures-008.jpg" width="100%"\>
+</p>
 
 
-
-## **3. Code**
+## **4. Code**
 
 Due to the limited file storage capacity in GitHub, we provide all training datasets and results (>45GB) in our Zenodo repository. The `intergraph.mlx` is an interactive notebook, which calls and implement all other functions. 
 
@@ -33,7 +65,7 @@ Due to the limited file storage capacity in GitHub, we provide all training data
     * `splitData.m` - This performs the splitting of subdataset into training, validating, and testing.
     runGCN
   * `selectGNN.m`: This function processes and selects the most optimal machine-learning configuration for each of the 32 models comprising the ensemble, based on the highest area under the ROC curve (refer to our report for the details). It also individually loads the output from `applyGNN.m`,  test each trained machine-learning model to every test subdataset, and exports the ROC curve figure presented on the report. The outputs can be found under the folder `results\selectGNN`.
-  * `mapSusceptibility.m`: This function inputs a user-specified data (D,M,YYYY) and loads the features from large NetCDF files. We provided only the year 2022 files because each single file exceeds 2GB file, which cannot be handled by GitHub or Zenodo efficiently. We, however, advise to download those data from the links provided in *([**2. Data**](#2-data)*). Generally, this function extracts all features and creates the graphical structure needed for the specified data. It then runs the trained machine learning model using the slected GNN for each of the 32 machine-learning models, and aggregate the predictions using mean (50th-percentile) or compute for 84th-percentile with standard deviation. The outputs can be found under the folder `results\mapSusceptibility`.
+  * `mapSusceptibility.m`: This function inputs a user-specified data (D,M,YYYY) and loads the features from large NetCDF files. We provided only the year 2022 files because each single file exceeds 2GB file, which cannot be handled by GitHub or Zenodo efficiently. We, however, advise to download those data from the links provided in *([**3. Data**](#3-data)*). Generally, this function extracts all features and creates the graphical structure needed for the specified data. It then runs the trained machine learning model using the slected GNN for each of the 32 machine-learning models, and aggregate the predictions using mean (50th-percentile) or compute for 84th-percentile with standard deviation. The outputs can be found under the folder `results\mapSusceptibility`.
   * `evaluateSettlement.m`: This function perform the **Unsupervised Spectral Graph Clustering** using the outputs from `mapSusceptibility.m`. It also loads the simplicial network adjacency matrix, describing the topology of road networks and settlements for each county-level mask. We slightly discourage to perform the `createADJsimplex.m` and `extractSettlementNodeIdx.m` because these two sub-functions would take very long hours (>7hrs). However, the outputs from these two subfunctions are consistent and does not change every time we perform `evaluateSettlement.m`, hence, no need to re-run it every single time we try to assess the settlement exposure.
     * `createADJsimplex.m` - This function creates an adjacency matrix for the roads and settlements using a spatial resolution of 50 meters, which could be very computationally challenging for large county-level masks such as Oslo and Viken, which have many settlements. We listed below estimated runtime for each county.
         *  County 1 - Agder - 369k-by-369k-sparse-matrix - 11min
@@ -48,13 +80,26 @@ Due to the limited file storage capacity in GitHub, we provide all training data
         *  County 29 - Oslo and Viken - 1010k-by-1010k-sparse-matrix - 1hr 17min
     * `extractSettlementNodeIdx.m` - This function randomly sample a representative node index for each settlement using the outputs of `createADJsimplex.m`.
 
-## **4. Results**
+## **5. Results**
 
-## **5. Performance**
+We demonstrate our inter-graph representation learning using the 2020 Gjerdrum quick clay incident as a case study.
 
-## **6. Repository Structure**
+<p align="center">
+    <img src="figures/images/figures-005.jpg" width="100%"\>
+</p>
+
+
+## **6. Performance**
+
+Using the ROC curve, we show that our model achived an aggregate AUC of 86.25%.
+<p align="center">
+    <img src="figures/images/roc_curve_page-0001.jpg" width="500"\>
+</p>
+
+## **7. Repository Structure**
 
 If some of the folders are not available, please refer to our Zenodo repository because GitHub limits our file uploads and does not allow large files.
+
 
 ```
 ├───code
