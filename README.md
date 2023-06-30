@@ -1,8 +1,10 @@
 # **Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) <!-- (insert zenodo doi) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7319726.svg)](https://doi.org/10.5281/zenodo.7319726) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 This GitHub repository contains the code, data, and figures for the Master of Research report [_Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning_](https://doi.org/10.1038/s41467-022-35418-8). If you have any questions, please contact [jtd33@cam.ac.uk](mailto:jtd33@cam.ac.uk).
+
 ---
 
 ## **1. Installation**
