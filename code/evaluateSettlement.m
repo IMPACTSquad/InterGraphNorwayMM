@@ -1,7 +1,7 @@
 function [] = evaluateSettlement(D,M,Y)
 
     % Load mass movement susceptibility map
-    [p, pR] = readgeoraster("results\mapSusceptibility\array_prob_adj_50th_"+string(Y)+'_'+string(M)+'_'+string(D)+".tif"); %1550x1195
+    [p, pR] = readgeoraster("results\mapSusceptibility\array_prob_adj_84th_"+string(Y)+'_'+string(M)+'_'+string(D)+".tif"); %1550x1195
     [p2,~] = mapresize(p,pR,20);
     clear p
 
@@ -22,24 +22,27 @@ function [] = evaluateSettlement(D,M,Y)
 
     % Create adjacency matrix for network and settlement map
     % [] = createADJsimplex(county,countyID); % optional - takes long hours (big data)
-    for county = 1:10
+    tic
+    for county = 10:10
     
         % load adjacency matrix for network and settlement map
         load("data\mask\adjacency_files\county"+string(countyID(county))+".mat",...
             "rsm_adjidx","rsm_adjrow","rsm_adjcol","rsm_adjarray")
-        G = graph(rsm_adjarray);     
+        G = graph(rsm_adjarray);
+        toc
         
         % extract the settlement node idx and 
         % [idx_i,ngroup_setID_size,ngroup_setID] = extractSettlementNodeIdx(s_ID,county,countyID,rsm_adjidx); % optional
         load("data\mask\settlement_node_idx\county"+string(countyID(county))+"_settlement_idx.mat",...
             "idx_i","ngroup_setID_size","ngroup_setID")
+        toc
 
         
         % construct the new graph adjacency matrix
         rsm_adjarray_settlement = zeros(ngroup_setID_size,ngroup_setID_size);
         rsm_adjarray_settlement_prob = rsm_adjarray_settlement; 
         for i = 1:ngroup_setID_size 
-
+            i, ngroup_setID_size, toc
             j = 1:i;
             [tr,d,~] = shortestpathtree(G, idx_i(i), idx_i(j),'OutputForm','cell');
             ind = sub2ind(size(rsm_adjarray_settlement),repelem(i,i),j);
@@ -57,6 +60,7 @@ function [] = evaluateSettlement(D,M,Y)
         rsm_adjarray_settlement_sym = rsm_adjarray_settlement'+triu(rsm_adjarray_settlement',1)';
         rsm_adjarray_settlement_sym(isnan(rsm_adjarray_settlement_sym))=0;
         rsm_adjarray_settlement_prob_sym = rsm_adjarray_settlement_prob'+triu(rsm_adjarray_settlement_prob',1)';
+        toc
 
         % determine the minimum distance d_min in such a way that the
         % original adjacency matrix (connectivity matrix) remains unchanged
@@ -123,7 +127,7 @@ function [] = evaluateSettlement(D,M,Y)
         sub.inter_prop = inter_prob';
         sub.intra_prob = intra_prob;
         shapewrite(sub,"results\evaluateSettlement\vector\settlement_county"+string(countyID(county))...
-            +"_"+string(Y)+'_'+string(M)+'_'+string(D)+".shp")
+            +"_"+string(Y)+'_'+string(M)+'_'+string(D)+"_84th.shp")
        
         % postprocess summary - incorporate population info to levels of
         % probability being exposed 
@@ -140,8 +144,8 @@ function [] = evaluateSettlement(D,M,Y)
         end
         T = table(uniq_municipality, intra_prob_municipality, ...
             inter_prob_municipality, population_municipality);
-        writetable(T,"results\table\settlement_county"+string(countyID(county))...
-            +"_"+string(Y)+'_'+string(M)+'_'+string(D)+".xlsx")
+        writetable(T,"results\evaluateSettlement\table\settlement_county"+string(countyID(county))...
+            +"_"+string(Y)+'_'+string(M)+'_'+string(D)+"_84th.xlsx")
         
     end
     
