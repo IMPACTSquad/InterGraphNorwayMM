@@ -9,7 +9,7 @@ This GitHub repository contains the code, data, and figures for the Master of Re
 
 ## **1. Overview**
 
-Our proposed inter-graph representation learning, which consists of two main steps: (1) Supervised Ensemble Graph Neural Network for susceptibility mapping and (2) Unsupervised Spectral Graph Clustering for settlement exposure assessment. The figure below shows an schematic overview of the entire workflow.
+Our proposed inter-graph representation learning, which consists of two main steps: (1) Supervised Ensemble Graph Neural Network for susceptibility mapping and (2) Unsupervised Spectral Graph Clustering for settlement exposure assessment. The figures below show an schematic overview of the entire workflow. Please, refer to our report [link](/report/report_mres_dimasaka.pdf) for the detailed discussion of this implementation.
 
 <p align="center">
     <img src="figures/images/figures-009.jpg" width="100%"\>
@@ -38,13 +38,17 @@ This code depends on [MALTAB R2023a](https://uk.mathworks.com/), [QGIS 3.22.16-B
 
 ## **3. Data**
 
-<p align="center">
-    <img src="figures/images/figures-004.jpg" width="100%"\>
-</p>
+All datasets used in this study are publicly available through the [Norwegian Licence for Open Government Data (NLOD)](https://data.norge.no/nlod/en) and any specified below.
 
-<p align="center">
-    <img src="figures/images/figures-008.jpg" width="100%"\>
-</p>
+* Mass Movement Incidents (Norwegian Water Resources and Energy Directorate): [Catalog Link](https://kartkatalog.nve.no/#metadata) 
+* Features
+    * Total rainfall and mean temperature (MET Norway): [THREDDS Data Server Link](https://thredds.met.no/thredds/catalog/senorge/seNorge_2018/catalog.html)
+    * Snow depth, snow water equivalent, and fresh snow water equivalent (MET Norway): [THREDDS Data Server Link](https://thredds.met.no/thredds/catalog/senorge/seNorge_snow/catalog.html)
+    * Steepness (Norwegian Water Resources and Energy Directorate): [Catalog Link](https://kartkatalog.nve.no/#metadata)
+    * European Landslide Susceptibility Map version 2 (ELSUS v2) (ESDAC): [Catalog Link](https://esdac.jrc.ec.europa.eu/content/european-landslide-susceptibility-map-elsus-v2#tabs-0-description=0)
+* Urban Formal Settlements (Statistics Norway): [Geonorge Link](https://kartkatalog.geonorge.no/metadata/28906bc8-a644-43d5-bbdb-33a217f458ef)
+* Transport Network Road (Norwegian Mapping Authority): [Geonorge Link](https://kartkatalog.geonorge.no/metadata/inspire-transport-network-road/a76704df-fdd4-4e09-92ac-a7ad1a77b328)
+* County-level Masking from Global Administrative Areas (GADM), Version 4.1: [CC BY 4.0)](https://gadm.org/license.html)
 
 
 ## **4. Code**
@@ -83,6 +87,14 @@ Due to the limited file storage capacity in GitHub, we provide all training data
 ## **5. Results**
 
 We demonstrate our inter-graph representation learning using the 2020 Gjerdrum quick clay incident as a case study.
+
+Figure Description: Date-specific maps of (a) total rainfall (mm/day), (b) mean temperature (Celsius degrees), (c) snow depth (cm/day), (d) snow water equivalent (mm/day), and (e) fresh snow water equivalent (mm/day) for December 30, 2020. Static maps of (f) steepness (degrees), (g) ELSUS susceptibility (categorical integer), (h) slope angle class (categorical integer), (i) land cover class (categorical integer), and (j) lithology class (categorical integer). Resulting (k) average (50th-percentile) susceptibility map with (l) calculated standard deviation using the estimates of 32 machine-learning models
+
+<p align="center">
+    <img src="figures/images/figures-004.jpg" width="100%"\>
+</p>
+
+Figure Description: (a) Country-wide map of average (50th-percentile) susceptibility December 30, 2020; (b) a photo showing the extent of the quick clay incident; a set of magnified maps: (c) average, (d) standard deviation, and (e) upper limit or 84th-percentile; Five neighboring settlements around the incident, each showing (f ) the minimum triggering exposure probability of mass-movement-susceptible roads for inter-settlement isolation and (g) the intra-settlement exposure probability of being a mass-movement-susceptible area.
 
 <p align="center">
     <img src="figures/images/figures-005.jpg" width="100%"\>
