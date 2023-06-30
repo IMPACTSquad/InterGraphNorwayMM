@@ -38,7 +38,7 @@ This code depends on [MALTAB R2023a](https://uk.mathworks.com/), [QGIS 3.22.16-B
 
 ## **3. Data**
 
-All datasets used in this study are publicly available through the [Norwegian Licence for Open Government Data (NLOD)](https://data.norge.no/nlod/en) and any specified below.
+All datasets used in this study are publicly available through the [Norwegian Licence for Open Government Data (NLOD)](https://data.norge.no/nlod/en) and any specified below. We made a complete copy of the files used for our study in our Zenodo repository. All datasets except those from MET Norway were pre-processed to be suitable as a machine learning input. These pre-processing technqiues were rasterization from being a vector polygon or line data such as the road networks and settlements.
 
 * Mass Movement Incidents (Norwegian Water Resources and Energy Directorate): [Catalog Link](https://kartkatalog.nve.no/#metadata) 
 * Features
