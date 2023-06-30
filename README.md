@@ -1,9 +1,9 @@
 # **Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7319726.svg)](https://doi.org/10.5281/zenodo.7319726) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8099812.svg)](https://doi.org/10.5281/zenodo.8099812) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
-This GitHub repository contains the code, data, and figures for the Master of Research report [_Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning_](/report/report_20230630.pdf). If you have any questions, please contact [jtd33@cam.ac.uk](mailto:jtd33@cam.ac.uk).
+This GitHub repository contains the code, data, and figures for the Master of Research report [_Near-real-time Country-wide Estimation of Susceptibility and Settlement Exposure from Norwegian Mass Movements via Inter-graph Representation Learning_](/report/report_mres_dimasaka.pdf). If you have any questions, please contact [jtd33@cam.ac.uk](mailto:jtd33@cam.ac.uk).
 
 ---
 
@@ -137,3 +137,19 @@ If some of the folders are not available, please refer to our Zenodo repository 
 ## **7. Acknowledgements**
 This work is supported by the UKRI Centre for Doctoral Training in "Application of Artificial Intelligence to the study of Environmental Risks" in the Department of Earth Sciences at the University of Cambridge. We thank the supervision support from  [Andrea Marinoni](https://www.andreamarinoni.com/) and [Sakthy Selvakumaran](http://www.eng.cam.ac.uk/profiles/ss683), and guidance from Annabelle Scott and Adriana.
 
+## **8. Want to cite this GitHub repository?**
+Feel free to use our recommended BibTex-formatted entry below.
+```
+@software{dimasaka_joshua_2023_8099812,
+  author       = {Dimasaka, Joshua},
+  title        = {{Near-real-time Country-wide Estimation of 
+                   Susceptibility and Settlement Exposure from
+                   Norwegian Mass Movements via Inter-graph
+                   Representation Learning}},
+  month        = jun,
+  year         = 2023,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.8099812},
+  url          = {https://doi.org/10.5281/zenodo.8099812}
+}
+```
